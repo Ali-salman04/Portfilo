@@ -22,7 +22,7 @@ const ProjectCard = ({ project, darkMode }) => {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className={`absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${darkMode ? 'bg-gray-900 bg-opacity-70' : 'bg-gray-100 bg-opacity-70'}`}>
-          <span className="text-lg font-bold px-4 text-center">View Project</span>
+          {/* <span className="text-lg font-bold px-4 text-center">View Project</span> */}
         </div>
       </div>
       
@@ -52,7 +52,7 @@ const ProjectCard = ({ project, darkMode }) => {
             <button 
               onClick={toggleExpanded} 
               className={`flex items-center mt-2 text-sm font-medium ${
-                darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
+                darkMode ? 'text-red-400 hover:text-red-300' : 'text-red-600 hover:text-red-700'
               }`}
             >
               {expanded ? (
@@ -73,8 +73,8 @@ const ProjectCard = ({ project, darkMode }) => {
             href="#" 
             className={`flex items-center gap-1 text-sm font-medium py-1 px-3 rounded-lg transition-colors ${
               darkMode 
-                ? 'text-white bg-blue-600 hover:bg-blue-700' 
-                : 'text-white bg-blue-600 hover:bg-blue-700'
+                ? 'text-white bg-[#14B8A6] ' 
+                : 'text-white bg-[#14B8A6] '
             }`}
           >
             <ExternalLink size={16} />

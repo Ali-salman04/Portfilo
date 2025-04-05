@@ -1,32 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Linkedin, Instagram, Sun, Moon, Mail, PhoneCall, Menu, X, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Image from "../Images/pic.jpg";
+import Image from "../Images/pic1.png";
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [animatedText, setAnimatedText] = useState("");
   const fullText = "Hello, I'm Hafiz Ali Salman";
   const [typingComplete, setTypingComplete] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Initialize dark mode based on user preference
   useEffect(() => {
-    // Check if user previously set dark mode preference
+    
     const savedDarkMode = localStorage.getItem('darkMode') === 'true';
     
-    // Check system preference if no saved preference
+   
     const prefersDark = window.matchMedia && 
       window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     setDarkMode(savedDarkMode || prefersDark);
   }, []);
 
-  // Text animation effect
+  
   useEffect(() => {
     if (animatedText.length < fullText.length) {
       const timeout = setTimeout(() => {
         setAnimatedText(fullText.slice(0, animatedText.length + 1));
-      }, 100); // Speed of typing
+      }, 100); 
       
       return () => clearTimeout(timeout);
     } else {
@@ -34,17 +32,17 @@ const Portfolio = () => {
     }
   }, [animatedText, fullText]);
 
-  // Update when dark mode changes
+ 
   useEffect(() => {
     localStorage.setItem('darkMode', darkMode.toString());
   }, [darkMode]);
 
-  // Toggle dark mode
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  // Toggle mobile menu
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -212,7 +210,7 @@ const Portfolio = () => {
   );
 };
 
-/* Add this CSS for the blinking cursor animation */
+
 const styles = `
 @keyframes blink {
   0%, 100% { opacity: 1; }
