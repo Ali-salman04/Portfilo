@@ -2,24 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { Linkedin, Instagram, Sun, Moon, Mail, PhoneCall, Menu, X, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Image from "../Images/pic1.png";
+
 const Portfolio = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // Default to true initially
   const [animatedText, setAnimatedText] = useState("");
   const fullText = "Hello, I'm Hafiz Ali Salman";
   const [typingComplete, setTypingComplete] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
+    // Get the value from localStorage if it exists
+    const savedDarkMode = localStorage.getItem('darkMode');
     
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    
-   
-    const prefersDark = window.matchMedia && 
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    setDarkMode(savedDarkMode || prefersDark);
+    // If there's a saved preference, use it; otherwise stay with the default (true)
+    if (savedDarkMode !== null) {
+      setDarkMode(savedDarkMode === 'true');
+    } else {
+      // No saved preference, ensure we default to dark mode
+      setDarkMode(true);
+      // Save the default to localStorage
+      localStorage.setItem('darkMode', 'true');
+    }
   }, []);
 
-  
+  // Animation for typing effect
   useEffect(() => {
     if (animatedText.length < fullText.length) {
       const timeout = setTimeout(() => {
@@ -32,16 +38,14 @@ const Portfolio = () => {
     }
   }, [animatedText, fullText]);
 
- 
+  // Save darkMode preference to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('darkMode', darkMode.toString());
   }, [darkMode]);
 
-
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-
   
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -119,14 +123,14 @@ const Portfolio = () => {
             <span className={`inline-block w-1 h-8 sm:h-10 md:h-12 bg-current ml-1 ${typingComplete ? 'animate-pulse' : 'animate-blink'}`}></span>
           </h1>
           <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">A Bit About Me</h2>
-<p className={`mb-4 text-xs sm:text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-  I am a Software Engineer and passionate developer who believes in mastering one skill at a time through patience, consistency, and dedication.
-  I have over a year of experience as a MERN Stack Developer, building responsive web applications with JavaScript, React, Next.js, and Node.js.
-  I love solving problems, optimizing performance, and always learning something new to stay ahead in the tech game.
-  Beyond coding, I enjoy collaborating with like-minded people, tackling real-world challenges, and building products that actually make a difference.
+          <p className={`mb-4 text-xs sm:text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            I am a Software Engineer and passionate developer who believes in mastering one skill at a time through patience, consistency, and dedication.
+            I have over a year of experience as a MERN Stack Developer, building responsive web applications with JavaScript, React, Next.js, and Node.js.
+            I love solving problems, optimizing performance, and always learning something new to stay ahead in the tech game.
+            Beyond coding, I enjoy collaborating with like-minded people, tackling real-world challenges, and building products that actually make a difference.
 
-  Let’s connect and build something extraordinary!
-</p>
+            Let's connect and build something extraordinary!
+          </p>
 
           <div className="flex flex-wrap gap-3 sm:space-x-4">
             <Link to="/resume" className={`flex items-center justify-center h-16 w-16 sm:h-20 sm:w-20 rounded-full ${darkMode ? 'bg-yellow-400 hover:bg-yellow-500' : 'bg-yellow-500 hover:bg-yellow-600'} transition-colors`}>
@@ -209,7 +213,6 @@ const Portfolio = () => {
     </div>
   );
 };
-
 
 const styles = `
 @keyframes blink {

@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Instagram, Sun, Moon, Menu, X } from 'lucide-react';
+import { Linkedin, Instagram, Sun, Moon, Menu, X, Mail,PhoneCall } from 'lucide-react';
 
 const Contact = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // Default to true initially
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    const prefersDark = window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setDarkMode(savedDarkMode || prefersDark);
+    // Get the value from localStorage if it exists
+    const savedDarkMode = localStorage.getItem('darkMode');
+
+    // If there's a saved preference, use it; otherwise stay with the default (true)
+    if (savedDarkMode !== null) {
+      setDarkMode(savedDarkMode === 'true');
+    } else {
+      // No saved preference, ensure we default to dark mode
+      setDarkMode(true);
+      // Save the default to localStorage
+      localStorage.setItem('darkMode', 'true');
+    }
   }, []);
 
   useEffect(() => {
@@ -95,11 +103,25 @@ const Contact = () => {
             <div className="space-y-4 sm:space-y-6">
               <div>
                 <h4 className="font-bold mb-1 sm:mb-2">Phone</h4>
-                <p className={`text-sm sm:text-base ${darkMode ? 'text-gray-300' : ''}`}>+92-300-0467075</p>
+                <a
+                  href="https://wa.me/923000467075"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-2 text-sm sm:text-base ${darkMode ? 'text-gray-300' : ''}`}
+                >
+                  <PhoneCall className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
+                  +92-300-0467075
+                </a>
               </div>
               <div>
                 <h4 className="font-bold mb-1 sm:mb-2">Email</h4>
-                <p className={`text-sm sm:text-base break-all ${darkMode ? 'text-gray-300' : ''}`}>hafiz.ali.salman@outlook.com</p>
+                <a
+                  href="mailto:hafiz.ali.salman@outlook.com"
+                  className={`flex items-center gap-2 text-sm sm:text-base ${darkMode ? 'text-gray-300' : ''}`}
+                >
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
+                  <span className="break-all">hafiz.ali.salman@outlook.com</span>
+                </a>
               </div>
               <div>
                 <h4 className="font-bold mb-1 sm:mb-2">Address</h4>
@@ -162,8 +184,8 @@ const Contact = () => {
               <button
                 type="submit"
                 className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-full font-medium ${darkMode
-                    ? 'bg-teal-500 hover:bg-teal-600'
-                    : 'bg-teal-400 hover:bg-teal-500'
+                  ? 'bg-teal-500 hover:bg-teal-600'
+                  : 'bg-teal-400 hover:bg-teal-500'
                   } transition-colors`}
               >
                 Send Message

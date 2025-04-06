@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 
 const Resume = () => {
-  const [darkMode, setDarkMode] = useState(false);
+   const [darkMode, setDarkMode] = useState(true); 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
