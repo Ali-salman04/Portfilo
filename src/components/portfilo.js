@@ -13,7 +13,7 @@ const Portfolio = () => {
   useEffect(() => {
     // Get the value from localStorage if it exists
     const savedDarkMode = localStorage.getItem('darkMode');
-    
+
     // If there's a saved preference, use it; otherwise stay with the default (true)
     if (savedDarkMode !== null) {
       setDarkMode(savedDarkMode === 'true');
@@ -30,8 +30,8 @@ const Portfolio = () => {
     if (animatedText.length < fullText.length) {
       const timeout = setTimeout(() => {
         setAnimatedText(fullText.slice(0, animatedText.length + 1));
-      }, 100); 
-      
+      }, 100);
+
       return () => clearTimeout(timeout);
     } else {
       setTypingComplete(true);
@@ -46,7 +46,7 @@ const Portfolio = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-  
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -62,31 +62,31 @@ const Portfolio = () => {
             <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Developer</p>
           </div>
         </div>
-        
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           <Link to="/resume" className={`hover:${darkMode ? 'text-gray-300' : 'text-gray-600'} transition-colors`}>Resume</Link>
           <a href="/projects" className={`hover:${darkMode ? 'text-gray-300' : 'text-gray-600'} transition-colors`}>Projects</a>
           <a href="/contact" className={`hover:${darkMode ? 'text-gray-300' : 'text-gray-600'} transition-colors`}>Contact</a>
-          <button 
-            onClick={toggleDarkMode} 
+          <button
+            onClick={toggleDarkMode}
             className={`p-2 rounded-full ${darkMode ? 'bg-gray-800 text-yellow-400' : 'bg-gray-100 text-gray-800'} transition-colors`}
             aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
           >
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </div>
-        
+
         {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center space-x-3">
-          <button 
-            onClick={toggleDarkMode} 
+          <button
+            onClick={toggleDarkMode}
             className={`p-2 rounded-full ${darkMode ? 'bg-gray-800 text-yellow-400' : 'bg-gray-100 text-gray-800'} transition-colors`}
             aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
           >
             {darkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <button 
+          <button
             onClick={toggleMenu}
             className={`p-2 rounded-full ${darkMode ? 'bg-gray-800' : 'bg-gray-100'} transition-colors`}
             aria-label="Toggle menu"
@@ -94,7 +94,7 @@ const Portfolio = () => {
             {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
-        
+
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className={`absolute top-full left-0 right-0 z-50 ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg md:hidden`}>
@@ -111,9 +111,9 @@ const Portfolio = () => {
       <section className="flex flex-col md:flex-row items-center justify-center px-6 sm:px-12 py-8 md:py-16 lg:py-24 max-w-6xl mx-auto">
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <div className="h-48 w-48 sm:h-60 sm:w-60 md:h-72 md:w-72 lg:h-80 lg:w-80 rounded-full bg-gray-600 overflow-hidden">
-            <img 
+            <img
               src={Image}
-              alt="Profile" 
+              alt="Profile"
             />
           </div>
         </div>
@@ -124,12 +124,9 @@ const Portfolio = () => {
           </h1>
           <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">A Bit About Me</h2>
           <p className={`mb-4 text-xs sm:text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            I am a Software Engineer and passionate developer who believes in mastering one skill at a time through patience, consistency, and dedication.
-            I have over a year of experience as a MERN Stack Developer, building responsive web applications with JavaScript, React, Next.js, and Node.js.
-            I love solving problems, optimizing performance, and always learning something new to stay ahead in the tech game.
-            Beyond coding, I enjoy collaborating with like-minded people, tackling real-world challenges, and building products that actually make a difference.
+            I am a Software Engineer and passionate developer who believes in mastering one skill at a time through patience, consistency, and dedication. I have over a year of experience as a Frontend Developer, building responsive web applications with JavaScript, React, and Next.js. I love solving problems, optimizing performance, and always learning something new to stay ahead in the tech game. Beyond coding, I enjoy collaborating with like-minded people, tackling real-world challenges, and building products that actually make a difference.
 
-            Let's connect and build something extraordinary!
+            Let’s connect and build something extraordinary!
           </p>
 
           <div className="flex flex-wrap gap-3 sm:space-x-4">
@@ -177,26 +174,26 @@ const Portfolio = () => {
           <div>
             <h3 className="font-bold mb-2">Follow Me</h3>
             <div className="flex space-x-3">
-              <a 
-                href="https://www.linkedin.com/in/hafiz-ali-salman-40715a250" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.linkedin.com/in/hafiz-ali-salman-40715a250"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`hover:${darkMode ? 'text-gray-300' : 'text-gray-600'} transition-colors`}
               >
                 <Linkedin className="w-5 h-5 text-blue-700" />
               </a>
-              <a 
-                href="https://github.com/Ali-salman04" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://github.com/Ali-salman04"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`hover:${darkMode ? 'text-gray-300' : 'text-gray-600'} transition-colors`}
               >
                 <Github className="w-5 h-5 text-black-700" />
               </a>
-              <a 
-                href="https://www.instagram.com/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`hover:${darkMode ? 'text-gray-300' : 'text-gray-600'} transition-colors`}
               >
                 <Instagram className="w-5 h-5 text-pink-500" />
