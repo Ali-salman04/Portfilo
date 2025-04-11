@@ -66,6 +66,8 @@ const Resume = () => {
             <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Developer</p>
           </div>
         </div>
+
+        
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">

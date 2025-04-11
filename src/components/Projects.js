@@ -4,10 +4,11 @@ import { Sun, Moon, Menu, X } from 'lucide-react';
 import ProjectCard from './ProjectCard';
 import Project1 from '../Images/project1.png';
 import Project3 from '../Images/project3.png';
+import Project2 from '../Images/pic2.png';
 
 
 const Projects = () => {
-   const [darkMode, setDarkMode] = useState(true); 
+  const [darkMode, setDarkMode] = useState(true); 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -37,21 +38,27 @@ const Projects = () => {
       title: 'Face Skin Disease Detection (FYP)',
       image: Project1,
       technologies: 'React, Tailwind CSS, Node.js',
-      description: 'As part of my Final Year Project, I am working on the development of a web-based Face Skin Disease Detection system. My primary role involves building the frontend using React.js to create an intuitive, responsive, and interactive user interface. The project integrates machine learning models to detect skin diseases from facial images, providing users with real-time feedback.'
+      description: 'As part of my Final Year Project, I am working on the development of a web-based Face Skin Disease Detection system. My primary role involves building the frontend using React.js to create an intuitive, responsive, and interactive user interface. The project integrates machine learning models to detect skin diseases from facial images, providing users with real-time feedback.',
+      demoLink: "",
+      githubLink: ""
     },
     {
       id: 2,
       title: 'RU Novel',
-      image: '/api/placeholder/400/300',
+      image: Project2,
       technologies: 'React, Redux, Tailwind CSS',
-      description: 'At RU Novel®️, I worked as a Junior Frontend Developer, contributing to the development and enhancement of the platform that hosts web novels and fan fictions. My primary role was to build responsive, user-friendly interfaces using React.js, ensuring a seamless and interactive experience for both writers and readers.'
+      description: 'At RU Novel®️, I worked as a Junior Frontend Developer, contributing to the development and enhancement of the platform that hosts web novels and fan fictions. My primary role was to build responsive, user-friendly interfaces using React.js, ensuring a seamless and interactive experience for both writers and readers.',
+      demoLink: "https://ru-novel-i9jv.vercel.app/",
+      githubLink: "https://github.com/Ali-salman04/Ru-Novel"
     },
     {
       id: 3,
       title: 'School Data Inventory',
       image: Project3,
-      technologies: 'React, Tailwind CSS',
-      description: 'A responsive portfolio website showcasing projects and skills. This application helps schools manage their inventory of equipment, supplies, and educational materials. It features a user-friendly dashboard, robust search capabilities, and detailed reporting tools.'
+      technologies: 'React, Tailwind CSS, Firestore, Authentication, Cloud Messaging',
+      description: 'A responsive portfolio website showcasing projects and skills. This application helps schools manage their inventory of equipment, supplies, and educational materials. It features a user-friendly dashboard, robust search capabilities, and detailed reporting tools.',
+      demoLink: "https://school-record-inventory-btgy.vercel.app/login",
+      githubLink: "https://github.com/Ali-salman04/School-Record-Inventory"
     }
   ];
 

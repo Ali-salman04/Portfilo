@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
 const ProjectCard = ({ project, darkMode }) => {
-  const { id, title, image, technologies, description } = project;
+  const {  title, image, technologies, description, demoLink, githubLink } = project;
   const [expanded, setExpanded] = useState(false);
   
   // Split technologies string into an array
@@ -70,11 +69,13 @@ const ProjectCard = ({ project, darkMode }) => {
         
         <div className="pt-2 flex justify-between items-center border-t border-gray-200 dark:border-gray-700">
           <a 
-            href="#" 
+            href={demoLink} 
+            target="_blank"
+            rel="noopener noreferrer"
             className={`flex items-center gap-1 text-sm font-medium py-1 px-3 rounded-lg transition-colors ${
               darkMode 
-                ? 'text-white bg-[#14B8A6] ' 
-                : 'text-white bg-[#14B8A6] '
+                ? 'text-white bg-[#14B8A6]' 
+                : 'text-white bg-[#14B8A6]'
             }`}
           >
             <ExternalLink size={16} />
@@ -82,7 +83,9 @@ const ProjectCard = ({ project, darkMode }) => {
           </a>
           
           <a 
-            href="#" 
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`flex items-center gap-1 text-sm font-medium py-1 px-3 rounded-lg transition-colors ${
               darkMode 
                 ? 'bg-gray-700 hover:bg-gray-600' 
@@ -97,4 +100,5 @@ const ProjectCard = ({ project, darkMode }) => {
     </div>
   );
 };
+
 export default ProjectCard;
