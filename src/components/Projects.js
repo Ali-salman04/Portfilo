@@ -39,7 +39,7 @@ const Projects = () => {
       image: Project1,
       technologies: 'React, Tailwind CSS, Node.js',
       description: 'As part of my Final Year Project, I am working on the development of a web-based Face Skin Disease Detection system. My primary role involves building the frontend using React.js to create an intuitive, responsive, and interactive user interface. The project integrates machine learning models to detect skin diseases from facial images, providing users with real-time feedback.',
-      demoLink: "",
+      demoLink: "https://fyp-project-nu.vercel.app/",
       githubLink: ""
     },
     {
