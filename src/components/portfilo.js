@@ -6,7 +6,7 @@ import Image from "../Images/pic1.png";
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(true); // Default to true initially
   const [animatedText, setAnimatedText] = useState("");
-  const fullText = "Hello, I'm Hafiz Ali Salman";
+  const fullText = "I'm Hafiz Ali Salman";
   const [typingComplete, setTypingComplete] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -122,7 +122,7 @@ const Portfolio = () => {
             {animatedText}
             <span className={`inline-block w-1 h-8 sm:h-10 md:h-12 bg-current ml-1 ${typingComplete ? 'animate-pulse' : 'animate-blink'}`}></span>
           </h1>
-          <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">A Bit About Me</h2>
+          <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">About</h2>
           <p className={`mb-4 text-xs sm:text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             I am a Software Engineer and passionate developer who believes in mastering one skill at a time through patience, consistency, and dedication. I have over a year of experience as a Frontend Developer, building responsive web applications with JavaScript, React, and Next.js. I love solving problems, optimizing performance, and always learning something new to stay ahead in the tech game. Beyond coding, I enjoy collaborating with like-minded people, tackling real-world challenges, and building products that actually make a difference.
 
