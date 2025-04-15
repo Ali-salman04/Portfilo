@@ -8,7 +8,7 @@ import Project2 from '../Images/pic2.png';
 
 
 const Projects = () => {
-  const [darkMode, setDarkMode] = useState(true); 
+  const [darkMode, setDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const Projects = () => {
       title: 'School Data Inventory',
       image: Project3,
       technologies: 'React, Tailwind CSS, Firestore, Authentication, Cloud Messaging',
-      description: 'A responsive portfolio website showcasing projects and skills. This application helps schools manage their inventory of equipment, supplies, and educational materials. It features a user-friendly dashboard, robust search capabilities, and detailed reporting tools.',
+      description: "In this project, I developed a robust admin dashboard using React.js and Firebase (Firestore, Authentication, and Cloud Messaging) From the moment you log in selecting your division and section to the real‑time updates you see on screen, everything feels seamless: admins can effortlessly create divisions and sections, spin up or remove tables and columns on the fly, and manage users with just a few clicks.Each user has a personal profile where they can upload a picture and update their details, and they only ever see the data that matters to them.Behind the scenes, Firestore handles all CRUD operations instantly, and Firebase Cloud Messaging makes sure you never miss a chat notification.I focused on performance and scalability throughout, and it was incredibly rewarding to bring this dynamic, flexible system to life!",
       demoLink: "https://school-record-inventory-btgy.vercel.app/login",
       githubLink: "https://github.com/Ali-salman04/School-Record-Inventory"
     }
@@ -117,7 +117,7 @@ const Projects = () => {
           </div>
         )}
       </nav>
-      
+
       {/* Projects Section */}
       <section id="projects" className="px-4 sm:px-8 md:px-12 py-8 sm:py-12 max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center">My Projects</h2>
@@ -127,7 +127,7 @@ const Projects = () => {
           ))}
         </div>
       </section>
-      
+
       {/* Footer */}
       <footer className={`px-4 sm:px-8 md:px-12 py-4 sm:py-6 text-center sm:text-right text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-6xl mx-auto mt-8`}>
         <p>©2025 By Hafiz Ali Salman.</p>
